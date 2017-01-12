@@ -1,7 +1,7 @@
 FROM masm/archlinux
 MAINTAINER Marco Monteiro <marco@neniu.org>
 
-ENTRYPOINT ["/usr/bin/couchdb", "-o", "/dev/null", "-e", "/dev/null"]
+ENTRYPOINT ["/usr/lib/couchdb/bin/couchdb", "-o", "/dev/null", "-e", "/dev/null"]
 EXPOSE 5984
 VOLUME /var/lib/couchdb
 
