@@ -8,6 +8,6 @@ VOLUME /var/lib/couchdb
 RUN pacman -Sq couchdb --needed --noconfirm --noprogressbar && \
     yes | pacman -Sqcc && \
     rm -rf /usr/share/man/* && \
-    mkdir /etc/couchdb/local.d && \
-    touch /etc/couchdb/local.d/zzz.ini
-COPY config.ini /etc/couchdb/local.d/_base.ini
+    mkdir -p /usr/lib/couchdb/etc/local.d && \
+    touch /usr/lib/couchdb/etc/local.d/zzz.ini
+COPY config.ini /usr/lib/couchdb/etc/local.d/_base.ini
